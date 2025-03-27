@@ -13,8 +13,7 @@ $states = [
     "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", 
     "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", 
     "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", 
-    "Uttar Pradesh", "Uttarakhand", "West Bengal", 
+    "Rajasthan", "Sikkim", 
     // Union Territories
     "Delhi", "Puducherry", "Chandigarh", "Ladakh", "Andaman and Nicobar Islands", 
     "Dadra and Nagar Haveli and Daman and Diu"
