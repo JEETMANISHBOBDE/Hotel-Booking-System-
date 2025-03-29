@@ -32,3 +32,16 @@
       <div class="swiper-wrapper">
         <?php 
           $res = selectAll('carousel');
+          while($row = mysqli_fetch_assoc($res))
+          {
+            $path = CAROUSEL_IMG_PATH;
+            echo <<<data
+              <div class="swiper-slide">
+                <img src="$path$row[image]" class="w-100 d-block">
+              </div>
+            data;
+          }
+        ?>
+      </div>
+    </div>
+  </div>
