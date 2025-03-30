@@ -64,3 +64,13 @@
             <div class="col-lg-3 mb-3">
               <label class="form-label" style="font-weight: 500;">Adult</label>
               <select class="form-select shadow-none" name="adult">
+                <?php 
+                  $guests_q = mysqli_query($con,"SELECT MAX(adult) AS `max_adult`, MAX(children) AS `max_children` 
+                    FROM `rooms` WHERE `status`='1' AND `removed`='0'");  
+                  $guests_res = mysqli_fetch_assoc($guests_q);
+                  
+                  for($i=1; $i<=$guests_res['max_adult']; $i++){
+                    echo"<option value='$i'>$i</option>";
+                  }
+                ?>
+              </select>
