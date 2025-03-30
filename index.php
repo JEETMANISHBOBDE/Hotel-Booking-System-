@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  <!-- check availability form -->
+   <!-- check availability form -->
 
   <div class="container availability-form">
     <div class="row">
@@ -74,3 +74,23 @@
                   }
                 ?>
               </select>
+            </div>
+            <div class="col-lg-2 mb-3">
+              <label class="form-label" style="font-weight: 500;">Children</label>
+              <select class="form-select shadow-none" name="children">
+                <?php 
+                  for($i=1; $i<=$guests_res['max_children']; $i++){
+                    echo"<option value='$i'>$i</option>";
+                  }
+                ?>
+              </select>
+            </div>
+            <input type="hidden" name="check_availability">
+            <div class="col-lg-1 mb-lg-3 mt-2">
+              <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
