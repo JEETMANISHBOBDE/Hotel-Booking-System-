@@ -119,8 +119,15 @@
               $fea_row[name]
             </span>";
           }
-          // get facilities of room
+         // get facilities of room
 
           $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f 
             INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id 
             WHERE rfac.room_id = '$room_data[id]'");
+
+          $facilities_data = "";
+          while($fac_row = mysqli_fetch_assoc($fac_q)){
+            $facilities_data .="<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+              $fac_row[name]
+            </span>";
+          }
