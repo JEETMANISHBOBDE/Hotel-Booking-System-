@@ -94,3 +94,13 @@
       </div>
     </div>
   </div>
+  <!-- Our Rooms -->
+
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR ROOMS</h2>
+
+  <div class="container">
+    <div class="row">
+
+      <?php 
+            
+        $room_res = select("SELECT * FROM `rooms` WHERE `status`=? AND `removed`=? ORDER BY `id` DESC LIMIT 3",[1,0],'ii');
