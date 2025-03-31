@@ -112,3 +112,10 @@
           $fea_q = mysqli_query($con,"SELECT f.name FROM `features` f 
             INNER JOIN `room_features` rfea ON f.id = rfea.features_id 
             WHERE rfea.room_id = '$room_data[id]'");
+
+          $features_data = "";
+          while($fea_row = mysqli_fetch_assoc($fea_q)){
+            $features_data .="<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+              $fea_row[name]
+            </span>";
+          }
