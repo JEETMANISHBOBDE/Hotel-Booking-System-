@@ -131,3 +131,9 @@
               $fac_row[name]
             </span>";
           }
+          // get thumbnail of image
+
+          $room_thumb = ROOMS_IMG_PATH."thumbnail.jpg";
+          $thumb_q = mysqli_query($con,"SELECT * FROM `room_images` 
+            WHERE `room_id`='$room_data[id]' 
+            AND `thumb`='1'");
