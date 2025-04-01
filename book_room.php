@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ($room_id, '$customer_name', CURDATE())";
 
     if ($conn->query($sql) === TRUE) {
-        // Update room status to 'booked'
+    
         $update_sql = "UPDATE rooms SET room_status = 'booked' WHERE room_id = $room_id";
         $conn->query($update_sql);
 
