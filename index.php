@@ -142,3 +142,13 @@
             $thumb_res = mysqli_fetch_assoc($thumb_q);
             $room_thumb = ROOMS_IMG_PATH.$thumb_res['image'];
           }
+          $book_btn = "";
+
+          if(!$settings_r['shutdown']){
+            $login=0;
+            if(isset($_SESSION['login']) && $_SESSION['login']==true){
+              $login=1;
+            }
+
+            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
+          }
