@@ -152,3 +152,8 @@
 
             $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
           }
+          $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`
+            WHERE `room_id`='$room_data[id]' ORDER BY `sr_no` DESC LIMIT 20";
+
+          $rating_res = mysqli_query($con,$rating_q);
+          $rating_fetch = mysqli_fetch_assoc($rating_res);
