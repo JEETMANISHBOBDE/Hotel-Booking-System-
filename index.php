@@ -189,3 +189,7 @@
                   <div class="features mb-4">
                     <h6 class="mb-1">Features</h6>
                     $features_data
+                  </div>
+                  <div class="facilities mb-4">
+                    <h6 class="mb-1">Facilities</h6>
+                    $facilities_data
