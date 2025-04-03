@@ -142,6 +142,7 @@
             $thumb_res = mysqli_fetch_assoc($thumb_q);
             $room_thumb = ROOMS_IMG_PATH.$thumb_res['image'];
           }
+
           $book_btn = "";
 
           if(!$settings_r['shutdown']){
@@ -152,8 +153,27 @@
 
             $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
           }
+
           $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`
             WHERE `room_id`='$room_data[id]' ORDER BY `sr_no` DESC LIMIT 20";
 
           $rating_res = mysqli_query($con,$rating_q);
           $rating_fetch = mysqli_fetch_assoc($rating_res);
+
+          $rating_data = "";
+
+          if($rating_fetch['avg_rating']!=NULL)
+          {
+            $rating_data = "<div class='rating mb-4'>
+              <h6 class='mb-1'>Rating</h6>
+              <span class='badge rounded-pill bg-light'>
+            ";
+
+            for($i=0; $i<$rating_fetch['avg_rating']; $i++){
+              $rating_data .="<i class='bi bi-star-fill text-warning'></i> ";
+            }
+
+            $rating_data .= "</span>
+              </div>
+            ";
+          }
