@@ -193,3 +193,13 @@
                   <div class="facilities mb-4">
                     <h6 class="mb-1">Facilities</h6>
                     $facilities_data
+            </div>
+                  <div class="guests mb-4">
+                    <h6 class="mb-1">Guests</h6>
+                    <span class="badge rounded-pill bg-light text-dark text-wrap">
+                      $room_data[adult] Adults
+                    </span>
+                    <span class="badge rounded-pill bg-light text-dark text-wrap">
+                      $room_data[children] Children
+                    </span>
+                  </div>
