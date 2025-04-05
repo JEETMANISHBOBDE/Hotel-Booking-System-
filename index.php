@@ -221,4 +221,9 @@
       </div>
     </div>
   </div>
+  <!-- Our Facilities -->
+
+  <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
+
+  <div class="container">
             
