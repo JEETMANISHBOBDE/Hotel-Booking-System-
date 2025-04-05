@@ -17,7 +17,7 @@ $result = $conn->query($sql);
         <?php if ($result->num_rows > 0): ?>
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div>
-                    <a href="view_rooms.php?hotel_id=<?php echo $row['hotel_id']; ?>">
+                    <a href="view_rooms echo $row['hotel_id']; ?>">
                         <?php echo $row['hotel_name']; ?>
                     </a>
                 </div>
