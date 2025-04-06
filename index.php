@@ -235,3 +235,7 @@ while($row = mysqli_fetch_assoc($res)){
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
               <img src="$path$row[icon]" width="60px">
             <h5 class="mt-3">$row[name]</h5>
+             </div>
+          data;
+        }
+      ?>
