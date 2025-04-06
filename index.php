@@ -226,4 +226,7 @@
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
 
   <div class="container">
-            
+    <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+      <?php 
+        $res = mysqli_query($con,"SELECT * FROM `facilities` ORDER BY `id` DESC LIMIT 5");
+        $path = FACILITIES_IMG_PATH;
