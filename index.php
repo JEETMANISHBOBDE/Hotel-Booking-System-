@@ -249,3 +249,6 @@ while($row = mysqli_fetch_assoc($res)){
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
   <div class="container mt-5">
     <div class="swiper swiper-testimonials">
+      <div class="swiper-wrapper mb-5">
+        <?php
+
