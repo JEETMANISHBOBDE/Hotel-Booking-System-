@@ -250,5 +250,10 @@ while($row = mysqli_fetch_assoc($res)){
   <div class="container mt-5">
     <div class="swiper swiper-testimonials">
       <div class="swiper-wrapper mb-5">
-        <?php
+        <?PHP
+$review_q = "SELECT rr.*,uc.name AS uname, uc.profile, r.name AS rname FROM `rating_review` rr
+            INNER JOIN `user_cred` uc ON rr.user_id = uc.id
+            INNER JOIN `rooms` r ON rr.room_id = r.id
+            ORDER BY `sr_no` DESC LIMIT 6";
+
 
