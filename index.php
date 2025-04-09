@@ -257,5 +257,8 @@ $review_q = "SELECT rr.*,uc.name AS uname, uc.profile, r.name AS rname FROM `rat
             ORDER BY `sr_no` DESC LIMIT 6";
  $review_res = mysqli_query($con,$review_q);
           $img_path = USERS_IMG_PATH;
+if(mysqli_num_rows($review_res)==0){
+            echo 'No reviews yet!';
+          }
 
 
