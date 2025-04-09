@@ -95,8 +95,7 @@ foreach ($states as $state) {
                 }
                 
                 $stmt->close();
-                
-                // Move to next day
+            
                 $current_date = strtotime("+1 day", $current_date);
             }
         }
