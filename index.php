@@ -260,5 +260,10 @@ $review_q = "SELECT rr.*,uc.name AS uname, uc.profile, r.name AS rname FROM `rat
 if(mysqli_num_rows($review_res)==0){
             echo 'No reviews yet!';
           }
+else
+          {
+            while($row = mysqli_fetch_assoc($review_res))
+            {
+              $stars = "<i class='bi bi-star-fill text-warning'></i> ";
 
 
