@@ -265,5 +265,8 @@ else
             while($row = mysqli_fetch_assoc($review_res))
             {
               $stars = "<i class='bi bi-star-fill text-warning'></i> ";
+              for($i=1; $i<$row['rating']; $i++){
+                $stars .= " <i class='bi bi-star-fill text-warning'></i>";
+              }
 
 
