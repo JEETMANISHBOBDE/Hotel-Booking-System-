@@ -281,5 +281,8 @@ else
                     $stars
                   </div>
                 </div>
+                slides;
+            }
+          }
 
 
