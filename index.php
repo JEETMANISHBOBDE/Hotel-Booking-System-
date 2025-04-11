@@ -121,3 +121,63 @@
               $fea_row[name]
             </span>";
           }
+
+          // get facilities of room
+
+          $fac_q = mysqli_query($con,"SELECT f.name FROM `facilities` f 
+            INNER JOIN `room_facilities` rfac ON f.id = rfac.facilities_id 
+            WHERE rfac.room_id = '$room_data[id]'");
+
+          $facilities_data = "";
+          while($fac_row = mysqli_fetch_assoc($fac_q)){
+            $facilities_data .="<span class='badge rounded-pill bg-light text-dark text-wrap me-1 mb-1'>
+              $fac_row[name]
+            </span>";
+          }
+
+          // get thumbnail of image
+
+          $room_thumb = ROOMS_IMG_PATH."thumbnail.jpg";
+          $thumb_q = mysqli_query($con,"SELECT * FROM `room_images` 
+            WHERE `room_id`='$room_data[id]' 
+            AND `thumb`='1'");
+
+          if(mysqli_num_rows($thumb_q)>0){
+            $thumb_res = mysqli_fetch_assoc($thumb_q);
+            $room_thumb = ROOMS_IMG_PATH.$thumb_res['image'];
+          }
+
+          $book_btn = "";
+
+          if(!$settings_r['shutdown']) {
+            $login=0;
+            if(isset($_SESSION['login']) && $_SESSION['login']==true) {
+              $login=1;
+            }
+
+            $book_btn = "<button onclick='checkLoginToBook($login,$room_data[id])' class='btn btn-sm text-white custom-bg shadow-none'>Book Now</button>";
+          }
+
+          $rating_q = "SELECT AVG(rating) AS `avg_rating` FROM `rating_review`
+            WHERE `room_id`='$room_data[id]' ORDER BY `sr_no` DESC LIMIT 20";
+
+          $rating_res = mysqli_query($con,$rating_q);
+          $rating_fetch = mysqli_fetch_assoc($rating_res);
+
+          $rating_data = "";
+
+          if($rating_fetch['avg_rating']!=NULL)
+          {
+            $rating_data = "<div class='rating mb-4'>
+              <h6 class='mb-1'>Rating</h6>
+              <span class='badge rounded-pill bg-light'>
+            ";
+
+            for($i=0; $i<$rating_fetch['avg_rating']; $i++){
+              $rating_data .="<i class='bi bi-star-fill text-warning'></i> ";
+            }
+
+            $rating_data .= "</span>
+              </div>
+            ";
+          }
