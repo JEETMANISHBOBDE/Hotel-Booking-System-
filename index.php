@@ -181,3 +181,49 @@
               </div>
             ";
           }
+
+          // print room card
+
+          echo <<<data
+            <div class="col-lg-4 col-md-6 my-3">
+              <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+                <img src="$room_thumb" class="card-img-top">
+                <div class="card-body">
+                  <h5>$room_data[name]</h5>
+                  <h6 class="mb-4">₹$room_data[price] per night</h6>
+                  <div class="features mb-4">
+                    <h6 class="mb-1">Features</h6>
+                    $features_data
+                  </div>
+                  <div class="facilities mb-4">
+                    <h6 class="mb-1">Facilities</h6>
+                    $facilities_data
+                  </div>
+                  <div class="guests mb-4">
+                    <h6 class="mb-1">Guests</h6>
+                    <span class="badge rounded-pill bg-light text-dark text-wrap">
+                      $room_data[adult] Adults
+                    </span>
+                    <span class="badge rounded-pill bg-light text-dark text-wrap">
+                      $room_data[children] Children
+                    </span>
+                  </div>
+                  $rating_data
+                  <div class="d-flex justify-content-evenly mb-2">
+                    $book_btn
+                    <a href="room_details.php?id=$room_data[id]" class="btn btn-sm btn-outline-dark shadow-none">More details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          data;
+
+        }
+
+      ?>
+
+      <div class="col-lg-12 text-center mt-5">
+        <a href="rooms.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Rooms >>></a>
+      </div>
+    </div>
+  </div>
