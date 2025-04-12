@@ -73,10 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-bottom: 20px;
         }
 
-        label {
-            font-size: 14px;
-            margin-bottom: 5px;
-            display: block;
+         block;
         }
 
         input[type="text"], input[type="date"] {
