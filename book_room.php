@@ -106,14 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Confirm Your Booking</h1>
-        <div class="room-info">
-            <p><strong>Room Name:</strong> <?php echo $room['room_name']; ?></p>
-            <p><strong>Price:</strong> $<?php echo $room['room_price']; ?> per night</p>
-            <p><strong>Check-in Date:</strong> <?php echo htmlspecialchars($checkin); ?></p>
-            <p><strong>Check-out Date:</strong> <?php echo htmlspecialchars($checkout); ?></p>
-        </div>
+    
 
         <form method="POST">
             <label for="customer_name">Your Name:</label>
