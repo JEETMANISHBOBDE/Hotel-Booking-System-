@@ -1,5 +1,4 @@
 <?php
-// Database connection
 $conn = new mysqli("localhost", "root", "", "hotel_booking");
 
 // Check connection
