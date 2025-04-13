@@ -6,8 +6,7 @@ $conn = new mysqli("localhost", "root", "", "hotel_booking");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Get booking details from URL parameters
+// Get  details from URL parameters
 $room_id = $_GET['room_id'];
 $checkin = $_GET['checkin'];
 $checkout = $_GET['checkout'];
