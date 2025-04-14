@@ -105,8 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="POST">
             <label for="customer_name">Your Name:</label>
-            <input type="text" id="customer_name" name="customer_name" required>
-
+            <input type="text"
             <button type="submit" class="confirm-button">Confirm Booking</button>
         </form>
     </div>
