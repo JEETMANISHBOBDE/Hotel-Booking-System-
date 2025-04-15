@@ -61,45 +61,7 @@ foreach ($states as $state) {
         
         // Number of rooms per type in each state (randomized)
         $rooms_per_type = rand(5, 20);
-        
-        for ($i = 1; $i <= $rooms_per_type; $i++) {
-            $current_date = $start_date;
-            
-            while ($current_date <= $end_date) {
-                $formatted_date = date("Y-m-d", $current_date);
-                
-                // Create unique room name
-                $room_name = "{$room_type['name']} - {$state} - Room $i";
-                
-                // Prepare SQL statement
-                $sql = "INSERT INTO rooms 
-                        (room_name, room_price, room_status, room_state, room_date) 
-                        VALUES 
-                        (?, ?, ?, ?, ?)";
-                
-                $stmt = $conn->prepare($sql);
-                $status = generateRoomAvailability();
-                $stmt->bind_param(
-                    "sisss", 
-                    $room_name, 
-                    $room_type['price'], 
-                    $status, 
-                    $state, 
-                    $formatted_date
-                );
-                
-                if ($stmt->execute()) {
-                    $total_rooms_added++;
-                } else {
-                    echo "Error: " . $stmt->error;
-                }
-                
-                $stmt->close();
-            
-                $current_date = strtotime("+1 day", $current_date);
             }
-        }
-    }
 }
 
 echo "Total rooms added across India: $total_rooms_added";
