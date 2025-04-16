@@ -52,18 +52,3 @@ function generateRoomAvailability() {
 // Track total rooms added
 $total_rooms_added = 0;
 
-// Generate rooms for each state and room type
-foreach ($states as $state) {
-    foreach ($room_types as $room_type) {
-        // Generate rooms for entire year 2025
-        $start_date = strtotime("2025-01-01");
-        $end_date = strtotime("2025-12-31");
-        
-        // Number of rooms per type in each state (randomized)
-        $rooms_per_type = rand(5, 20);
-            }
-}
-
-echo "Total rooms added across India: $total_rooms_added";
-$conn->close();
-?>
