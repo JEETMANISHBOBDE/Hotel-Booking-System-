@@ -60,47 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             padding: 20px;
-        }
 
-        h1 {
-            color: #ff6600;
-            margin-bottom: 20px;
-        }
-
-        .room-info {
-            margin-bottom: 20px;
-        }
-
-         block;
-        }
-
-        input[type="text"], input[type="date"] {
-            padding: 10px;
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .confirm-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #ff6600;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            border: none;
-        }
-
-        .confirm-button:hover {
-            background: #cc2900;
-        }
-    </style>
-</head>
-<body>
     
 
         <form method="POST">
