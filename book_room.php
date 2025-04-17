@@ -1,40 +1,4 @@
-<?php
-$conn = new mysqli("localhost", "root", "", "hotel_booking");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-// Get  details from URL parameters
-$room_id = $_GET['room_id'];
-$checkin = $_GET['checkin'];
-$checkout = $_GET['checkout'];
-
-// Fetch room details
-$sql = "SELECT * FROM rooms WHERE room_id = $room_id";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $room = $result->fetch_assoc();
-} else {
-    die("Invalid room ID.");
-}
-
-// Handle booking confirmation
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $customer_name = $_POST['customer_name'];
-
-    // Insert booking details into the `bookings` table
-    $sql = "INSERT INTO bookings (room_id, customer_name, booking_date)
-            VALUES ($room_id, '$customer_name', CURDATE())";
-
-    if ($conn->query($sql) === TRUE) {
-    
-        $update_sql = "UPDATE rooms SET room_status = 'booked' WHERE room_id = $room_id";
-        $conn->query($update_sql);
-
-        echo "<script>alert('Booking successful!'); window.location.href = 'index.php';</script>";
-    } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
