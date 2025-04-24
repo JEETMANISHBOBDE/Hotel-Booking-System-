@@ -1,5 +1,4 @@
 <?php
-// Fetch hotel names from the database
 $sql = "SELECT * FROM hotels";
 $result = $conn->query($sql);
 ?>
