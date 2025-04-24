@@ -11,7 +11,6 @@ $result = $conn->query($sql);
     <title>Select Hotel</title>
 </head>
 <body>
-    <h1>Select a Hotel</h1>
     <div>
         <?php if ($result->num_rows > 0): ?>
             <?php while ($row = $result->fetch_assoc()): ?>
