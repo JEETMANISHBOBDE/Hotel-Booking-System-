@@ -8,3 +8,7 @@ use Exception;
 
 require 'inc/links.php';
 require 'inc/header.php';
+// --- Database Connection ---
+class Database {
+    private static $instance;
+    private $pdo;
