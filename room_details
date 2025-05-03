@@ -1,14 +1,5 @@
 <?php
-// ROOM DETAILS PAGE (OOP, PDO, Prepared Statements, Modular)
-
-namespace App;
-
-use PDO;
-use Exception;
-
-require 'inc/links.php';
-require 'inc/header.php';
-// --- Database Connection ---
+// ROOM DETAILS PAGE (
 class Database {
     private static $instance;
     private $pdo;
